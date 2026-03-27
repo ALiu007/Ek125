@@ -171,6 +171,42 @@ print(f"Problems Solved: {correctProblems}")
 print(f"Accuracy: {round((correctProblems/totalProblems)*100,2)}%")
 print(f"Average Time Per Problem: {round(totalProblems/totalTime,2)} seconds")
 
+elif modeChoice == "2":
+    points = 0
+    penalty = 1
+    wrong = 0
+    for i in range(21):
+        if typeChoice.title() == "1":
+            if correctAnswer == additionProblem():
+                points += 1
+            elif correctAnswer != additionProblem():
+                score = points - penalty
+                wrong += 1
+
+        elif typeChoice.title() == "2":
+            if correctAnswer == subtractionProblem():
+                points += 1
+            elif correctAnswer != subtractionProblem():
+                score = points - penalty
+                wrong += 1
+
+        elif typeChoice.title() == "3":
+            if correctAnswer == multiplicationProblem():
+                points += 1
+            elif correctAnswer != multiplicationProblem():
+                score = points - penalty
+                wrong += 1
+
+        elif typeChoice.title() == "4":
+            if correctAnswer == divisionProblem():
+                points += 1
+            elif correctAnswer != divisionProblem():
+                score = points - penalty
+                wrong += 1
+    print("="*40)
+print(f"Total Points Earned: {points}")
+print(f"Questions wrong and points lost: {wrong}")
+print(f"Accuracy: {round((points/20)*100,2)}%")
 
 
 
