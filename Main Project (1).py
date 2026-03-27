@@ -182,6 +182,7 @@ if modeChoice == "2":
             elif correctAnswer != additionProblem():
                 score = points - penalty
                 wrong += 1
+                print("That's incorrect!")
 
         elif typeChoice.title() == "2":
             if correctAnswer == subtractionProblem():
@@ -189,6 +190,7 @@ if modeChoice == "2":
             elif correctAnswer != subtractionProblem():
                 score = points - penalty
                 wrong += 1
+                print("That's incorrect!")
 
         elif typeChoice.title() == "3":
             if correctAnswer == multiplicationProblem():
@@ -196,6 +198,7 @@ if modeChoice == "2":
             elif correctAnswer != multiplicationProblem():
                 score = points - penalty
                 wrong += 1
+                print("That's incorrect!")
 
         elif typeChoice.title() == "4":
             if correctAnswer == divisionProblem():
@@ -203,6 +206,8 @@ if modeChoice == "2":
             elif correctAnswer != divisionProblem():
                 score = points - penalty
                 wrong += 1
+                print("That's incorrect!")
+        print(f"Points so far: {points}")
     print("="*40)
 print(f"Total Points Earned: {points}")
 print(f"Questions wrong and points lost: {wrong}")
