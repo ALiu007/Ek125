@@ -171,7 +171,7 @@ print(f"Problems Solved: {correctProblems}")
 print(f"Accuracy: {round((correctProblems/totalProblems)*100,2)}%")
 print(f"Average Time Per Problem: {round(totalProblems/totalTime,2)} seconds")
 
-elif modeChoice == "2":
+if modeChoice == "2":
     points = 0
     penalty = 1
     wrong = 0
