@@ -136,7 +136,7 @@ if modeChoice == "1":
     totalProblems = 0
     correctProblems = 0
 
-    while totalTime < 60:
+    while totalTime < 120:
         if typeChoice.title() == "1":
             correctAnswer = additionProblem()
 
@@ -206,6 +206,58 @@ if modeChoice == "2":
         print(f"Question {i}/20 completed")
         print(f"Points so far: {points}")
         print("")
+
+if modeChoice == "3":
+    totalTime = 0
+    points = 0
+    totalProblems = 0
+    correctProblems = 0
+    previousProblemCorrect = False
+    c = 0
+
+    while totalTime < 60:
+        if typeChoice.title() == "1":
+            correctAnswer = additionProblem()
+
+        elif typeChoice.title() == "2":
+            correctAnswer = subtractionProblem()
+
+        elif typeChoice.title() == "3":
+            correctAnswer = multiplicationProblem()
+
+        elif typeChoice.title() == "4":
+            correctAnswer = divisionProblem()
+
+        validity, answerTime = validation(correctAnswer)
+        totalTime += answerTime
+
+        totalProblems += 1
+
+        if validity == True:
+            if previousProblemCorrect == True:
+                c += 1
+                print(f"Chain Bonus (+{c})")
+                points += c
+            correctProblems += 1
+
+            if answerTime < 3:
+                points += 3
+            else:
+                points += 1
+            previousProblemCorrect = True
+
+        elif validity == False:
+            previousProblemCorrect = False
+            c = 0
+
+
+        print(" ")
+        print(f"Elapsed Time: {round(totalTime, 2)} seconds")
+        print(f"Points so far: {points}")
+        print("")
+
+    print("="*40)
+    print("Time is up!")
 
 print(f"Total Points Earned: {points}")
 print(f"Problems Solved: {correctProblems}")
