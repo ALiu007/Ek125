@@ -96,7 +96,10 @@ def validation(correctAnswer):
     """Gets user input from the problem presented and returns answer validity and time"""
     answerValid = False
     answerStart = time.time()
-    answer = int(input("Your Answer: "))
+    answer = input("Your Answer: ")
+    while type(answer) != int:
+        print("Please Enter a Integer")
+        answer = input("Your Answer: ")
     answerEnd = time.time()
     answerTime = answerEnd - answerStart
 
