@@ -9,14 +9,18 @@ def additionProblem():
     if diffChoice.title() == "1":
         a = random.randint(1, 10)
         b = random.randint(1, 10)
+        # if the difficulty choice is easy, generates 2 random integers between 1 and 10
     elif diffChoice.title() == "2":
         a = random.randint(1, 50)
         b = random.randint(1, 50)
+        # if the difficulty choice is medium, generates 2 random integers between 1 and 50
     elif diffChoice.title() == "3":
         a = random.randint(1, 100)
         b = random.randint(1, 100)
+        # if the difficulty choice is easy, generates 2 random integers between 1 and 100
     print(f"Addition question: What is {a} + {b}?")
     correctAnswer = a + b
+    # sets the correct answer as the correct answers as the two integers added together
     return correctAnswer
 
 
@@ -27,23 +31,28 @@ def subtractionProblem():
     if diffChoice.title() == "1":
         a = random.randint(1, 10)
         b = random.randint(1, 10)
+        # if the difficulty choice is easy, generates 2 random integers between 1 and 10
         while a < b:
             a = random.randint(1, 10)
             b = random.randint(1, 10)
+            # if the random integers subtract to a negative number, regenerates the integers
     elif diffChoice.title() == "2":
         a = random.randint(1, 50)
         b = random.randint(1, 50)
+        # if the difficulty choice is medium, generates 2 random integers between 1 and 50
         while a < b:
             a = random.randint(1, 50)
             b = random.randint(1, 50)
     elif diffChoice.title() == "3":
         a = random.randint(1, 100)
         b = random.randint(1, 100)
+        # if the difficulty choice is easy, generates 2 random integers between 1 and 100
         while a < b:
             a = random.randint(1, 100)
             b = random.randint(1, 100)
     print(f"Subtraction question: What is {a} - {b}")
     correctAnswer = a - b
+    # sets the correct answer as the two integers subtracted with each other
     return correctAnswer
 
 
@@ -54,14 +63,18 @@ def multiplicationProblem():
     if diffChoice.title() == "1":
         a = random.randint(1, 10)
         b = random.randint(1, 10)
+        # if the difficulty choice is easy, generates 2 random integers between 1 and 10
     elif diffChoice.title() == "2":
         a = random.randint(1, 50)
         b = random.randint(1, 50)
+        # if the difficulty choice is medium, generates 2 random integers between 1 and 50
     elif diffChoice.title() == "3":
         a = random.randint(1, 100)
         b = random.randint(1, 100)
+        # if the difficulty choice is easy, generates 2 random integers between 1 and 100
     print(f"Multiplication question: What is {a} * {b}")
     correctAnswer = a * b
+    # sets the correct answer as the two integers multiplied together
     return correctAnswer
 
 
@@ -72,23 +85,28 @@ def divisionProblem():
     if diffChoice.title() == "1":
         a = random.randint(1, 10)
         b = random.randint(1, 10)
+        # if the difficulty choice is easy, generates 2 random integers between 1 and 10
         while a % b != 0:
             a = random.randint(1, 10)
             b = random.randint(1, 10)
+            # if the division doesn't result in a whole number, it regenerates the integers
     elif diffChoice.title() == "2":
         a = random.randint(1, 50)
         b = random.randint(1, 50)
+        # if the difficulty choice is medium, generates 2 random integers between 1 and 50
         while a % b != 0:
             a = random.randint(1, 50)
             b = random.randint(1, 50)
     elif diffChoice.title() == "3":
         a = random.randint(1, 100)
         b = random.randint(1, 100)
+        # if the difficulty choice is hard, generates 2 random integers between 1 and 100
         while a % b != 0:
             a = random.randint(1, 100)
             b = random.randint(1, 100)
     print(f"Division question: What is {a} / {b}")
     correctAnswer = a / b
+    # sets the correct answer as the two integers divided by each other
     return correctAnswer
 
 
@@ -150,17 +168,22 @@ if modeChoice == "1":
     correctProblems = 0
 
     while totalTime < 120:
+    # Ass long as total time is less than 120 seconds (2 minutes), the game will keep going
         if typeChoice.title() == "1":
             correctAnswer = additionProblem()
+            # If addition is chosen, calls the additionProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "2":
             correctAnswer = subtractionProblem()
+            # If subtraction is chosen, calls the subtractionProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "3":
             correctAnswer = multiplicationProblem()
+            # If multiplication is chosen, calls the multiplicationProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "4":
             correctAnswer = divisionProblem()
+            # If division is chosen, calls the divisionProblem function and sets the correct answer as that
 
         validity, answerTime = validation(correctAnswer)
         totalTime += answerTime
@@ -173,6 +196,7 @@ if modeChoice == "1":
                 points += 3
             else:
                 points += 1
+        # if validity is true, adds a point for correctness, and if answered within 3 seconds, adds 3 points
 
         print(" ")
         print("=" * 40)
@@ -193,15 +217,19 @@ if modeChoice == "2":
     for i in range(1,21):
         if typeChoice.title() == "1":
             correctAnswer = additionProblem()
+            # If addition is chosen, calls the additionProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "2":
             correctAnswer = subtractionProblem()
+            # If subtraction is chosen, calls the subtractionProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "3":
             correctAnswer = multiplicationProblem()
+            # If multiplication is chosen, calls the multiplicationProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "4":
             correctAnswer = divisionProblem()
+            # If division is chosen, calls the divisionProblem function and sets the correct answer as that
 
         validity, answerTime = validation(correctAnswer)
 
@@ -214,9 +242,11 @@ if modeChoice == "2":
                 points += 3
             else:
                 points += 1
+            # if validity is true, adds a point for correctness, and if answered within 3 seconds, adds 3 points
         elif validity == False:
             print("Wrong Answer (-1)")
             points -= 1
+            # if validity is false, subtracts a point from the points count
 
         print("")
         print("=" * 40)
@@ -237,15 +267,19 @@ if modeChoice == "3":
     while totalTime < 60:
         if typeChoice.title() == "1":
             correctAnswer = additionProblem()
+            # If addition is chosen, calls the additionProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "2":
             correctAnswer = subtractionProblem()
+            # If subtraction is chosen, calls the subtractionProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "3":
             correctAnswer = multiplicationProblem()
+            # If multiplication is chosen, calls the multiplicationProblem function and sets the correct answer as that
 
         elif typeChoice.title() == "4":
             correctAnswer = divisionProblem()
+            # If division is chosen, calls the divisionProblem function and sets the correct answer as that
 
         validity, answerTime = validation(correctAnswer)
         totalTime += answerTime
@@ -263,11 +297,13 @@ if modeChoice == "3":
                 points += 3
             else:
                 points += 1
+            # if validity is true, adds a point for correctness, and if answered within 3 seconds, adds 3 points
             previousProblemCorrect = True
 
         elif validity == False:
             previousProblemCorrect = False
             c = 0
+        # if validity is false, resets the chain count back to 0
 
 
         print(" ")
