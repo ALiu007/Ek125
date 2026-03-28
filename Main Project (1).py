@@ -101,7 +101,7 @@ def validation(correctAnswer):
     answerTime = answerEnd - answerStart
 
     if answer == correctAnswer:
-        if answerTime < 3:
+        if answerTime < 2:
             print("Lightning Fast Answer! Time Bonus awarded (+3)")
         else:
             print("Correct Answer! (+1)")
@@ -160,62 +160,54 @@ if modeChoice == "1":
                 points += 3
             else:
                 points += 1
+
         print(" ")
         print(f"Elapsed Time: {round(totalTime, 2)} seconds")
-        print(f"Points: {points}")
+        print(f"Points so far: {points}")
         print("")
     print("="*40)
     print("Time is up!")
+
+if modeChoice == "2":
+    totalTime = 0
+    points = 0
+    totalProblems = 0
+    correctProblems = 0
+
+    for i in range(1,21):
+        if typeChoice.title() == "1":
+            correctAnswer = additionProblem()
+
+        elif typeChoice.title() == "2":
+            correctAnswer = subtractionProblem()
+
+        elif typeChoice.title() == "3":
+            correctAnswer = multiplicationProblem()
+
+        elif typeChoice.title() == "4":
+            correctAnswer = divisionProblem()
+
+        validity, answerTime = validation(correctAnswer)
+
+        totalTime += answerTime
+        totalProblems += 1
+
+        if validity == True:
+            correctProblems += 1
+            if answerTime < 3:
+                points += 3
+            else:
+                points += 1
+        elif validity == False:
+            print("Wrong Answer (-1)")
+            points -= 1
+
+        print("")
+        print(f"Question {i}/20 completed")
+        print(f"Points so far: {points}")
+        print("")
+
 print(f"Total Points Earned: {points}")
 print(f"Problems Solved: {correctProblems}")
 print(f"Accuracy: {round((correctProblems/totalProblems)*100,2)}%")
 print(f"Average Time Per Problem: {round(totalProblems/totalTime,2)} seconds")
-
-if modeChoice == "2":
-    points = 0
-    penalty = 1
-    wrong = 0
-    for i in range(21):
-        if typeChoice.title() == "1":
-            if correctAnswer == additionProblem():
-                points += 1
-            elif correctAnswer != additionProblem():
-                score = points - penalty
-                wrong += 1
-                print("That's incorrect!")
-
-        elif typeChoice.title() == "2":
-            if correctAnswer == subtractionProblem():
-                points += 1
-            elif correctAnswer != subtractionProblem():
-                score = points - penalty
-                wrong += 1
-                print("That's incorrect!")
-
-        elif typeChoice.title() == "3":
-            if correctAnswer == multiplicationProblem():
-                points += 1
-            elif correctAnswer != multiplicationProblem():
-                score = points - penalty
-                wrong += 1
-                print("That's incorrect!")
-
-        elif typeChoice.title() == "4":
-            if correctAnswer == divisionProblem():
-                points += 1
-            elif correctAnswer != divisionProblem():
-                score = points - penalty
-                wrong += 1
-                print("That's incorrect!")
-        print(f"Points so far: {points}")
-    print("="*40)
-print(f"Total Points Earned: {points}")
-print(f"Questions wrong and points lost: {wrong}")
-print(f"Accuracy: {round((points/20)*100,2)}%")
-
-
-
-
-
-
-
