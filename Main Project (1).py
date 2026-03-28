@@ -121,23 +121,27 @@ print("Welcome to the Quick-Draw Math Challenge")
 print("="*40)
 print("Answer as many math problems as correct as possible. \nProblems increase in difficulty, and the game tracks accuracy and speed.")
 print("")
-print("Modes: (1) Speed, (2) Accuracy, (3) Streak")
+print("Modes: \n(1) Speed - In 2 minutes, try to answer the most problems possible \n(2) Accuracy - Answer 20 problems with no time limit, wrong answers are penalized \n(3) Streak - In 1 minute, answer as many questions as possible with a chain bonus for consecutive correct answers")
+
 modeChoice = input("Choose your mode (1-3): ")
 while modeChoice.title() != "1" and modeChoice.title() != "2" and modeChoice.title() != "3":
     print("Invalid Input! Choose a number 1-3.")
     modeChoice = input("Choose your mode (1-3): ")
 
-print("Types of problems: (1) Addition, (2) Subtraction, (3) Multiplication, (4) Division")
+print("")
+print("Types of problems: \n(1) Addition \n(2) Subtraction \n(3) Multiplication \n(4) Division")
 typeChoice = input("Choose your type of problem (1-4): ")
 while typeChoice.title() != "1" and typeChoice.title() != "2" and typeChoice.title() != "3" and typeChoice.title() != "4":
     print("Invalid Input! Choose a number 1-4.")
     typeChoice = input("Choose your type of problem (1-4): ")
 
-print("Difficulties: (1) Easy, (2) Medium, (3) Hard")
+print("")
+print("Difficulties \n(1) Easy - Problem use numbers 1-10 \n(2) Medium - Problem use numbers 1-50 \n(3) Hard - Problem use numbers 1-100")
 diffChoice = input("Choose your difficulty: ")
 while diffChoice.title() != "1" and diffChoice.title() != "2" and diffChoice.title() != "3":
     print("Invalid Input! Choose a difficulty (Easy, Medium, Hard).")
     diffChoice = input("Choose your difficulty: ")
+print("")
 
 if modeChoice == "1":
     totalTime = 0
