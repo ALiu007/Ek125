@@ -6,13 +6,13 @@ def additionProblem():
     """Selects two random numbers and asks the user for their sum"""
     a = 0
     b = 0
-    if diffChoice.title() == "Easy":
+    if diffChoice.title() == "1":
         a = random.randint(1, 10)
         b = random.randint(1, 10)
-    elif diffChoice.title() == "Medium":
+    elif diffChoice.title() == "2":
         a = random.randint(1, 50)
         b = random.randint(1, 50)
-    elif diffChoice.title() == "Hard":
+    elif diffChoice.title() == "3":
         a = random.randint(1, 100)
         b = random.randint(1, 100)
     print(f"Addition question: What is {a} + {b}?")
@@ -24,19 +24,19 @@ def subtractionProblem():
     """Selects two random numbers and asks the user for their difference"""
     a = 0
     b = 0
-    if diffChoice.title() == "Easy":
+    if diffChoice.title() == "1":
         a = random.randint(1, 10)
         b = random.randint(1, 10)
         while a < b:
             a = random.randint(1, 10)
             b = random.randint(1, 10)
-    elif diffChoice.title() == "Medium":
+    elif diffChoice.title() == "2":
         a = random.randint(1, 50)
         b = random.randint(1, 50)
         while a < b:
             a = random.randint(1, 50)
             b = random.randint(1, 50)
-    elif diffChoice.title() == "Hard":
+    elif diffChoice.title() == "3":
         a = random.randint(1, 100)
         b = random.randint(1, 100)
         while a < b:
@@ -51,13 +51,13 @@ def multiplicationProblem():
     """Selects two random numbers and asks for their product"""
     a = 0
     b = 0
-    if diffChoice.title() == "Easy":
+    if diffChoice.title() == "1":
         a = random.randint(1, 10)
         b = random.randint(1, 10)
-    elif diffChoice.title() == "Medium":
+    elif diffChoice.title() == "2":
         a = random.randint(1, 50)
         b = random.randint(1, 50)
-    elif diffChoice.title() == "Hard":
+    elif diffChoice.title() == "3":
         a = random.randint(1, 100)
         b = random.randint(1, 100)
     print(f"Multiplication question: What is {a} * {b}")
@@ -69,19 +69,19 @@ def divisionProblem():
     """Selects two random numbers and asks for quotient"""
     a = 0
     b = 0
-    if diffChoice.title() == "Easy":
+    if diffChoice.title() == "1":
         a = random.randint(1, 10)
         b = random.randint(1, 10)
         while a % b != 0:
             a = random.randint(1, 10)
             b = random.randint(1, 10)
-    elif diffChoice.title() == "Medium":
+    elif diffChoice.title() == "2":
         a = random.randint(1, 50)
         b = random.randint(1, 50)
         while a % b != 0:
             a = random.randint(1, 50)
             b = random.randint(1, 50)
-    elif diffChoice.title() == "Hard":
+    elif diffChoice.title() == "3":
         a = random.randint(1, 100)
         b = random.randint(1, 100)
         while a % b != 0:
@@ -112,6 +112,12 @@ def validation(correctAnswer):
     return answerValid, answerTime
 
 
+#Main Function Starts
+print("="*40)
+print("Welcome to the Quick-Draw Math Challenge")
+print("="*40)
+print("Answer as many math problems as possible within a time limit. \nProblems increase in difficulty, and the game tracks accuracy and speed.")
+print("")
 print("Modes: (1) Speed, (2) Accuracy, (3) Streak")
 modeChoice = input("Choose your mode (1-3): ")
 while modeChoice.title() != "1" and modeChoice.title() != "2" and modeChoice.title() != "3":
@@ -124,9 +130,9 @@ while typeChoice.title() != "1" and typeChoice.title() != "2" and typeChoice.tit
     print("Invalid Input! Choose a number 1-4.")
     typeChoice = input("Choose your type of problem (1-4): ")
 
-print("Difficulties: Easy, Medium, Hard")
+print("Difficulties: (1) Easy, (2) Medium, (3) Hard")
 diffChoice = input("Choose your difficulty: ")
-while diffChoice.title() != "Easy" and diffChoice.title() != "Medium" and diffChoice.title() != "Hard":
+while diffChoice.title() != "1" and diffChoice.title() != "2" and diffChoice.title() != "3":
     print("Invalid Input! Choose a difficulty (Easy, Medium, Hard).")
     diffChoice = input("Choose your difficulty: ")
 
@@ -162,8 +168,11 @@ if modeChoice == "1":
                 points += 1
 
         print(" ")
+        print("=" * 40)
+        print("=== Game Status ===")
         print(f"Elapsed Time: {round(totalTime, 2)} seconds")
         print(f"Points so far: {points}")
+        print("="*40)
         print("")
     print("="*40)
     print("Time is up!")
@@ -203,8 +212,11 @@ if modeChoice == "2":
             points -= 1
 
         print("")
+        print("=" * 40)
+        print("=== Game Status ===")
         print(f"Question {i}/20 completed")
         print(f"Points so far: {points}")
+        print("=" * 40)
         print("")
 
 if modeChoice == "3":
@@ -252,13 +264,19 @@ if modeChoice == "3":
 
 
         print(" ")
+        print("=" * 40)
+        print("=== Game Status ===")
         print(f"Elapsed Time: {round(totalTime, 2)} seconds")
         print(f"Points so far: {points}")
+        print("=" * 40)
         print("")
 
     print("="*40)
     print("Time is up!")
 
+print("="*40)
+print("*** End Game Statistics ***")
+print("=" * 40)
 print(f"Total Points Earned: {points}")
 print(f"Problems Solved: {correctProblems}")
 print(f"Accuracy: {round((correctProblems/totalProblems)*100,2)}%")
