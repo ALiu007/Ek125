@@ -119,16 +119,17 @@ def validation(correctAnswer):
     answerStart = time.time()
     #Getting user input for their answer
     answer = input("Your Answer: ")
-    #Confirming input is a int
-    while type(answer) != int:
+    #Confirming input is an int
+    while answer.isnumeric() == False:
         print("Please Enter a Integer")
         answer = input("Your Answer: ")
+
     #Getting time at the end of the input and then subtracting the end from the start to get the seconds it took
     answerEnd = time.time()
     answerTime = answerEnd - answerStart
 
     #Checks if the input answer equals the correct answer and then prints the points gained
-    if answer == correctAnswer:
+    if int(answer) == correctAnswer:
         if answerTime < 2:
             print("Lightning Fast Answer! Time Bonus awarded (+3)")
         else:
