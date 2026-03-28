@@ -4,6 +4,10 @@
 # Then, after choosing the mode, the player will be prompted to choose one of the four modes shown on screen. Finally,
 # before starting the game, the player will be prompted to choose one of three difficulties of problems.
 #
+#   To run in pyCharm:
+#   Open the main project file (.py file) into pyCharm. Then, press the green run arrow at the top and follow the 
+#   instructions presented on the main menu and start playing.
+#
 #   To get started, we follow a basic scoring system that rewards each player 1 point per correct answer. After each
 # question we also give instant feedback on whether the player answered correctly and show a running score. Depending
 # on which mode the player chooses, there are various modifiers on scoring.
