@@ -116,7 +116,7 @@ def validation(correctAnswer):
 print("="*40)
 print("Welcome to the Quick-Draw Math Challenge")
 print("="*40)
-print("Answer as many math problems as possible within a time limit. \nProblems increase in difficulty, and the game tracks accuracy and speed.")
+print("Answer as many math problems as correct as possible. \nProblems increase in difficulty, and the game tracks accuracy and speed.")
 print("")
 print("Modes: (1) Speed, (2) Accuracy, (3) Streak")
 modeChoice = input("Choose your mode (1-3): ")
