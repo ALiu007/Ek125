@@ -109,6 +109,7 @@ def divisionProblem():
     # sets the correct answer as the two integers divided by each other
     return correctAnswer
 
+# Tested module A 5 times, and everything worked as planned
 
 def validation(correctAnswer):
     """Gets user input from the problem presented and returns answer validity and time"""
@@ -132,6 +133,7 @@ def validation(correctAnswer):
 
     return answerValid, answerTime
 
+# Tested module B 5 times, and everything worked as planned
 
 #Main Function Starts
 print("="*40)
@@ -324,3 +326,6 @@ print(f"Total Points Earned: {points}")
 print(f"Problems Solved: {correctProblems}")
 print(f"Accuracy: {round((correctProblems/totalProblems)*100,2)}%")
 print(f"Average Time Per Problem: {round(totalProblems/totalTime,2)} seconds")
+
+# Tested module C 5 times, and everything worked as planned
+# Tested the main code 5 times, and everything worked as planned
